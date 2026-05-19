@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Персональная Панель</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <h1 id="greeting">Привет!</h1>
+    <div id="clock">00:00:00</div>
+    <div id="date">1 января, понедельник</div>
+</header>
+
+<div class="dashboard">
+    <div class="widget widget-weather">
+        <h3>🌤️ Погода сейчас</h3>
+        <div class="weather-container">
+            <span id="weather-text">Синхронизация с сервером...</span>
+        </div>
+    </div>
+
+    <div class="widget widget-quote">
+        <h3>💬 Цитата для вдохновения</h3>
+        <p id="quote-text">Нажмите кнопку, чтобы зарядиться мудростью.</p>
+        <span id="quote-author"></span>
+        <button id="get-quote-btn">Другая цитата</button>
+    </div>
+
+    <div class="widget widget-movie">
+        <h3>🎬 Фильм дня</h3>
+        <div class="movie-card">
+            <div class="movie-info">
+                <h4 id="movie-title">Загрузка фильма...</h4>
+                <div id="movie-rating">⭐ --</div>
+                <p id="movie-desc">Описание появится здесь.</p>
+            </div>
+        </div>
+        <button id="get-movie-btn">Другой фильм</button>
+    </div>
+
+    <div class="widget widget-webcam">
+        <h3>📹 Кибер-Зеркало</h3>
+        <div class="webcam-container">
+            <video id="webcam-video" autoplay playsinline muted></video>
+            <div id="webcam-placeholder">Камера выключена</div>
+        </div>
+        <button id="toggle-webcam-btn">Включить камеру</button>
+    </div>
+
+    <div class="widget widget-todo">
+        <h3>📝 Задачи на сегодня</h3>
+        <div class="todo-input-block">
+            <input type="text" id="todo-input" placeholder="Что нужно сделать?">
+            <button id="add-todo-btn">+</button>
+        </div>
+        <ul id="todo-list"></ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

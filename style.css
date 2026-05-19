@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+#greeting {
+    font-size: 2.8rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+#clock {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+#date {
+    margin-top: 5px;
+    opacity: 0.5;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.widget {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.widget:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.15);
+}
+
+.widget-weather {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.weather-container {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #38bdf8;
+    padding: 5px 0;
+}
+
+.widget-quote, .widget-movie, .widget-webcam {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#quote-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    color: #f3e8ff;
+}
+
+#quote-author {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    color: #c084fc;
+    font-weight: 500;
+}
+
+#movie-title {
+    font-size: 1.3rem;
+    color: #38bdf8;
+    margin-bottom: 4px;
+}
+
+#movie-rating {
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 8px;
+}
+
+#movie-desc {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.webcam-container {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#webcam-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transform: scaleX(-1);
+}
+
+#webcam-placeholder {
+    font-size: 1.1rem;
+    opacity: 0.4;
+}
+
+.todo-input-block {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#todo-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+#add-todo-btn {
+    background: #a855f7;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#todo-list {
+    list-style: none;
+}
+
+#todo-list li {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#todo-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+
+.delete-btn {
+    color: #ef4444;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#get-quote-btn, #get-movie-btn, #toggle-webcam-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.2s ease;
+}
+
+#get-quote-btn:hover { background: #a855f7; border-color: #a855f7; }
+#get-movie-btn:hover { background: #38bdf8; border-color: #38bdf8; }
+#toggle-webcam-btn:hover { background: #06b6d4; border-color: #06b6d4; }
